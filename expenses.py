@@ -3,3 +3,6 @@ class Item:
         self.name = name
         self.website = website 
         self.cuisine = cuisine 
+
+    def get_name(self):
+        return self.name
