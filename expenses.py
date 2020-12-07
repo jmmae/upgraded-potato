@@ -1,4 +1,4 @@
-itemSet = set()
+itemList = []
 
 class Item: 
     def __init__(self, description, category, amount, price):
@@ -37,14 +37,14 @@ def createObject():
     newCategory = str(input("Enter category of product: "))
     newAmount = int(input("Enter amount of product: "))
     newPrice = int(input("Enter price of product: "))
-    itemSet.add(newItem)
+    itemList.append(newItem)
     newItem = Item(newDescription,newCategory,newAmount,newPrice)
-    print("The itemSet is now", itemSet)
+    print("The itemList is now", itemList)
     
 
 def deleteObject(delete):
-    itemSet.discard(delete) #making something inaccessible is totally the same thing as deleting it
-    print("The itemSet is now", itemSet)
+    itemList.remove(delete) #making something inaccessible is totally the same thing as deleting it
+    print("The itemList is now", itemList)
 
 def editMode():
     while True:
