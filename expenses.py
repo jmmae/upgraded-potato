@@ -33,11 +33,15 @@ class Item:
         
 def createObject(): 
     newItem = str(input("Enter the name of the product: "))
-    newDescription = str(input("Enter description of product: "))
-    newCategory = str(input("Enter category of product: "))
-    newAmount = int(input("Enter amount of product: "))
-    newPrice = int(input("Enter price of product: "))
     itemList.append(newItem)
+    newDescription = str(input("Enter description of product: "))
+    itemList.append(newDescription)
+    newCategory = str(input("Enter category of product: "))
+    itemList.append(newCategory)
+    newAmount = int(input("Enter amount of product: "))
+    itemList.append(newAmount)
+    newPrice = int(input("Enter price of product: "))
+    itemList.append(newPrice)
     newItem = Item(newDescription,newCategory,newAmount,newPrice)
     print("The itemList is now", itemList)
     
@@ -59,35 +63,63 @@ def editMode():
             toDelete = str(input("Enter the name of the product to be deleted: "))
             deleteObject(toDelete)
         elif userInp == 3: 
+            print("Bye!")
+            SystemExit
             break
     
 
+#find total costs of objects
+#analysis
+#average total spend
+
+
+def categorySpend():
+    print("Test")
+def averageSpend():
+    return newPrice / newAmount
+def totalSpend():
+    //print 
+
+
 def analysisMode():
-    print("Choose between:")
-    print("1. categorySpend ")
-    print("2. averageSpend ")
-    print("3. totalSpend")
-    print("4. Exit to menu screen")
-    userInp = int(input("Please enter your choice: "))
-    pass
+    while True:
+        print("Choose between:")
+        print("1. categorySpend ")
+        print("2. averageSpend ")
+        print("3. totalSpend")
+        print("4. Exit to menu screen")
+        userInp = int(input("Please enter your choice: "))
+        if userInp == 1:
+            categorySpend()
+        elif userInp == 2:
+            averageSpend()
+        elif userInp == 3:
+            totalSpend()
+        elif userInp == 4:
+            print("Bye!")
+            menu()
+            break
+    
+
+def menu():
+    while True:
+        print("Choose between:")
+        print("1. Edit Mode")
+        print("2. Analysis Mode")
+        print("3. Exit")
+        userInp = int(input("Please enter your choice: "))
+        if userInp == 1:
+            editMode()
+        elif userInp == 2:
+            analysisMode()
+        elif userInp == 3:
+            print("Bye!")
+            break
 
 
-while True:
-    print("Choose between:")
-    print("1. Edit Mode")
-    print("2. Analysis Mode")
-    print("3. Exit")
-    userInp = int(input("Please enter your choice: "))
-    if userInp == 1:
-        editMode()
-    elif userInp == 2:
-        analysisMode()
-    elif userInp == 3:
-        print("Bye!")
-        break
+menu()
 
 
-
-
-
+    #comment
+    
     
